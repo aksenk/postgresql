@@ -5,7 +5,7 @@
     path: "{{ postgresql_data_directory }}"
     state: absent
   register: pgdata_dir_remove
-  when: ansible_os_family == "RedHat" and postgresql_cluster_reset
+  when: postgresql_cluster_reset
 
 - name: PostgreSQL | Make sure the postgres data directory exists
   file:
